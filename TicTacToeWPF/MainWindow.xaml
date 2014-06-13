@@ -1,0 +1,59 @@
+﻿<Window x:Class="TicTacToeWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="500" Width="315" ResizeMode="NoResize">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="StyleDic.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+        <Grid HorizontalAlignment="Left">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Button Name="restartButton" Grid.Column="0" Grid.Row="0" Width="36" Height="36" Click="onRestartButton_Click" Style="{StaticResource menuButtonStyle}" >
+            <Image Grid.Column="0" Grid.Row="0" Source="restart_icon.png" Stretch="Fill"/>
+        </Button>
+        <ComboBox Name="gameModeComboBox" Grid.Column="1" Grid.Row="0" Width="80" VerticalAlignment="Center" SelectionChanged="gameModeComboBox_Click" SelectedIndex="0">
+            <ComboBoxItem>Hot Seat</ComboBoxItem>
+            <ComboBoxItem>AI Easy</ComboBoxItem>
+            <ComboBoxItem>AI Hard</ComboBoxItem>
+        </ComboBox>
+        <Button Name="aboutButton" Grid.Column="2" Grid.Row="0" Width="36" Height="36" Click="aboutButton_Click" Style="{StaticResource menuButtonStyle}" >
+            <Image Grid.Column="2" Grid.Row="0" Source="about_icon.png" Stretch="Fill"/>
+        </Button>
+
+        <Button Name="A1" Grid.Column="0" Grid.Row="1" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80" Height="80" FontSize="36" Click="gameAction_Click" Style="{StaticResource GameButtonStyle}" />
+        <Button Name="A2" Grid.Column="1" Grid.Row="1" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80" Height="80" FontSize="36" Click="gameAction_Click" Style="{StaticResource GameButtonStyle}" />
+        <Button Name="A3" Grid.Column="2" Grid.Row="1" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80" Height="80" FontSize="36" Click="gameAction_Click" Style="{StaticResource GameButtonStyle}" />
+        <Button Name="B1" Grid.Column="0" Grid.Row="2" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80" Height="80" FontSize="36" Click="gameAction_Click" Style="{StaticResource GameButtonStyle}" />
+        <Button Name="B2" Grid.Column="1" Grid.Row="2" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80" Height="80" FontSize="36" Click="gameAction_Click" Style="{StaticResource GameButtonStyle}" />
+        <Button Name="B3" Grid.Column="2" Grid.Row="2" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80" Height="80" FontSize="36" Click="gameAction_Click" Style="{StaticResource GameButtonStyle}" />
+        <Button Name="C1" Grid.Column="0" Grid.Row="3" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80" Height="80" FontSize="36" Click="gameAction_Click" Style="{StaticResource GameButtonStyle}" />
+        <Button Name="C2" Grid.Column="1" Grid.Row="3" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80" Height="80" FontSize="36" Click="gameAction_Click" Style="{StaticResource GameButtonStyle}" />
+        <Button Name="C3" Grid.Column="2" Grid.Row="3" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80" Height="80" FontSize="36" Click="gameAction_Click" Style="{StaticResource GameButtonStyle}" />
+
+        <Label Grid.Column="0" Grid.Row="4" Content="Wins X" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>
+        <Label Grid.Column="1" Grid.Row="4" Content="Wins O" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>
+        <Label Grid.Column="2" Grid.Row="4" Content="Ties" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>
+
+        <Label Name="winsX" Grid.Column="0" Grid.Row="5" Content="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36"/>
+        <Label Name="winsO" Grid.Column="1" Grid.Row="5" Content="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36"/>
+        <Label Name="ties" Grid.Column="2" Grid.Row="5" Content="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36"/>
+    </Grid>
+</Window>
